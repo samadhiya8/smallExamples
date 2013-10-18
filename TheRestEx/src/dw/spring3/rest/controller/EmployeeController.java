@@ -37,7 +37,6 @@ private EmployeeDS employeeDS;
 	
 	@RequestMapping(method=RequestMethod.GET, value="/employee/{id}")
 	public ModelAndView getEmployee(@PathVariable String id) {
-		System.out.println("The id is : "+id);
 		Employee e = employeeDS.get(Long.parseLong(id));
 		return new ModelAndView(XML_VIEW_NAME, "object", e);
 	}
